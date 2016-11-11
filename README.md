@@ -9,6 +9,14 @@ Set up for mxnet.
 
 ## How to run:
 
+First, generate your filelist.  Which involves building the docs for 
+your project, and then going into `_build/html` directory and
+getting the file list.
+
+(For MXNet it's checked in.)
+
 ```
-python builder/generaterst.py
+cd _build/html
+find . -type f > /tmp/filelist.txt
+python builder/generaterst.py --filelist /tmp/filelist.txt
 ```
