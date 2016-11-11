@@ -22,6 +22,10 @@ def command_args(defaults=False):
             help="List of files built by the original docs site",
             default="data/filelist.txt",
             type=str)
+    parser.add_argument("-xl","--exceptionlist",
+            help="List of mapping exceptions",
+            default="data/exceptions.txt",
+            type=str)
     parser.add_argument("-o","--output-path",
             help="Path where rst files should be written",
             default="docs/")
@@ -44,15 +48,33 @@ class RedirectGenerator(object):
 
     def __init__(self, cmd):
         self.cmd = cmd
+        self.load_exceptions()
+
+    def load_exceptions(self):
+        exception_lines = open(self.cmd.exceptionlist).readlines()
+        self.exceptions = {}
+        for line in exception_lines:
+            line = line.rstrip()
+            a,b = line.split(',')
+            if b == "0":
+                b = False
+            self.exceptions[a] = b
 
     def generate_url(self, fn):
-        return self.cmd.target_url + fn
+        suffix = self.exceptions.get(fn, default=fn)
+        return self.cmd.target_url + suffix
 
     def generate_filename(self, fn):
         partial_fn, ext = os.path.splitext(fn)
         return self.cmd.output_path + partial_fn + ".rst"
 
     def should_skip(self, fn):
+        if self.exceptions.has_key(fn):
+            exc = self.exceptions[fn]
+            if not exc:
+                return True
+            else:
+                return False
         if fn.endswith(".html"):
             return False  # Don't skip HTML files
         return True  # Skip the others

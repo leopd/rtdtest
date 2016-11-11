@@ -1,0 +1,15 @@
+_static/mxnet-theme/footer.rst,0
+_static/mxnet-theme/index.rst,0
+_static/mxnet-theme/layout.rst,0
+_static/mxnet-theme/navbar.rst,0
+genindex.rst,0
+packages/julia/index.rst,api/julia/index.html
+packages/r/index.rst,api/r/index.html
+packages/c++/index.rst,api/c++/index.html
+packages/python/index.rst,api/python/index.html
+packages/python/module.rst,api/python/module.html
+packages/python/model.rst,api/python/model.html
+packages/python/io.rst,api/python/io.html
+packages/python/io.rst,api/python/io.html
+packages/python/ndarray.rst,api/python/ndarray.html
+packages/python/kvstore.rst,api/python/kvstore.html
