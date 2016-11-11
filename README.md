@@ -7,16 +7,27 @@ a readthedocs.org website to another domain.
 
 Set up for mxnet.
 
-## How to run:
+## Running for MXNet
+
+```
+python builder/generaterst.py
+```
+
+## How to run generally
 
 First, generate your filelist.  Which involves building the docs for 
 your project, and then going into `_build/html` directory and
 getting the file list.
 
-(For MXNet it's checked in.)
-
 ```
 cd _build/html
 find . -type f > /tmp/filelist.txt
 python builder/generaterst.py --filelist /tmp/filelist.txt
+```
+
+## Resetting the git repo
+
+```
+rm -rf docs
+git checkout docs
 ```
