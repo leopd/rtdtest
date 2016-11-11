@@ -61,7 +61,10 @@ class RedirectGenerator(object):
             self.exceptions[a] = b
 
     def generate_url(self, fn):
-        suffix = self.exceptions.get(fn, default=fn)
+        if self.exceptions.has_key(fn):
+            suffix = self.exceptions[fn]
+        else:
+            suffix = fn
         return self.cmd.target_url + suffix
 
     def generate_filename(self, fn):
