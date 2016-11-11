@@ -1,8 +1,8 @@
-_static/mxnet-theme/footer.rst,0
-_static/mxnet-theme/index.rst,0
-_static/mxnet-theme/layout.rst,0
-_static/mxnet-theme/navbar.rst,0
-genindex.rst,0
+_static/mxnet-theme/footer.html,0
+_static/mxnet-theme/index.html,0
+_static/mxnet-theme/layout.html,0
+_static/mxnet-theme/navbar.html,0
+genindex.html,0
 packages/c++/index.html,api/c++/index.html
 packages/julia/index.html,api/julia/index.html
 packages/python/index.html,api/python/index.html
